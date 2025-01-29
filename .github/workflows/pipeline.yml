@@ -45,7 +45,7 @@ jobs:
       with:
         args: >
           -Dsonar.login=${{ secrets.SONAR_TOKEN }}
-          -Dsonar.projectKey=bancolombia-prueba-ms-usuarios
+          -Dsonar.projectKey=Lider-Bancolomiba_bancolombia-prueba-ms-usuarios
           -Dsonar.organization=liderbancolombia
           -Dsonar.tests=.
           -Dsonar.test.inclusions=**/test_*.py
