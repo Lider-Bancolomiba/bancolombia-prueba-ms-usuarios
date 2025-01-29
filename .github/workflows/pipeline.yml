@@ -26,7 +26,7 @@ jobs:
       with:
         args: >
           -Dsonar.projectKey=bancolombia-prueba-ms-usuarios
-          -Dsonar.organization=Lider Bancolombia
+          -Dsonar.organization="Lider Bancolombia"
           -Dsonar.sources=.
           -Dsonar.host.url=https://sonarcloud.io
 
@@ -59,4 +59,4 @@ jobs:
       run: |
         aws ecs wait services-stable \
           --cluster  main-ecs-cluster\
-          --service usuarios-service
+          --service usuarios-service  
