@@ -1,6 +1,6 @@
 import pytest
 from fastapi.testclient import TestClient
-from moto import mock_dynamodb
+from moto import mock_aws as mock_dynamodb
 import boto3
 from main import app, table, User
 
