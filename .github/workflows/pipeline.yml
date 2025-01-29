@@ -25,8 +25,8 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=${{ secrets.SONAR_PROJECT_KEY }}
-          -Dsonar.organization=${{ secrets.SONAR_ORG }}
+          -Dsonar.projectKey=bancolombia-prueba-ms-usuarios
+          -Dsonar.organization=lider-bancolombia
           -Dsonar.sources=.
           -Dsonar.host.url=https://sonarcloud.io
 
