@@ -28,7 +28,6 @@ jobs:
           -Dsonar.projectKey='bancolombia-prueba-ms-usuarios'
           -Dsonar.organization='Bancolombia'
           -Dsonar.python.coverage.reportPaths=coverage.xml
-          -Dsonar.tests=tests/
           -Dsonar.sources=.
           -Dsonar.host.url=https://sonarcloud.io
 
