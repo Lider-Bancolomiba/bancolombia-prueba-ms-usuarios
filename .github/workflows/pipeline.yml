@@ -19,14 +19,31 @@ jobs:
         aws-secret-access-key: ${{ secrets.AWS_SECRET_ACCESS_KEY }}
         aws-region: 'us-east-1'
 
+    # Instalación de dependencias para pruebas
+    - name: Install dependencies
+      run: |
+        python -m venv venv
+        source venv/bin/activate
+        pip install -r requirements.txt
+        pip install pytest moto fastapi boto3 pytest-cov
+
+    # Ejecución de pruebas unitarias con cobertura
+    - name: Run unit tests
+      run: |
+        source venv/bin/activate
+        pytest --cov=. --cov-report=xml --maxfail=3 --disable-warnings
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v4
+      #continue-on-error: true
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=usuarios
+          -Dsonar.projectKey=bancolombia-prueba-ms-usuarios
           -Dsonar.organization=Bancolombia
+          -Dsonar.tests=.
+          -Dsonar.test.inclusions=**/test_*.py
           -Dsonar.python.coverage.reportPaths=coverage.xml
           -Dsonar.sources=.
           -Dsonar.host.url=https://sonarcloud.io
