@@ -25,7 +25,6 @@ jobs:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey='bancolombia-prueba-ms-usuarios'
           -Dsonar.organization='Bancolombia'
           -Dsonar.python.coverage.reportPaths=coverage.xml
           -Dsonar.sources=.
