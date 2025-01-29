@@ -19,6 +19,7 @@ jmespath==1.0.1
 markdown-it-py==3.0.0
 MarkupSafe==2.1.5
 mdurl==0.1.2
+moto<4.0
 pydantic==2.10.6
 pydantic_core==2.27.2
 Pygments==2.19.1
