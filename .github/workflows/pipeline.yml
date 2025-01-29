@@ -34,6 +34,9 @@ jobs:
         source venv/bin/activate
         PYTHONPATH=$(pwd) pytest --cov=. --cov-report=xml --maxfail=3 --disable-warnings
 
+    - name: Check coverage file
+      run: ls -lah coverage.xml
+
     - name: SonarCloud Scan
       uses: SonarSource/sonarcloud-github-action@v4
       #continue-on-error: true
