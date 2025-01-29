@@ -20,13 +20,15 @@ jobs:
         aws-region: 'us-east-1'
 
     - name: SonarCloud Scan
-      uses: SonarSource/sonarcloud-github-action@v2
+      uses: SonarSource/sonarcloud-github-action@v4
       env:
         SONAR_TOKEN: ${{ secrets.SONAR_TOKEN }}
       with:
         args: >
-          -Dsonar.projectKey=bancolombia-prueba-ms-usuarios
-          -Dsonar.organization=Bancolombia
+          -Dsonar.projectKey='bancolombia-prueba-ms-usuarios'
+          -Dsonar.organization='Bancolombia'
+          -Dsonar.python.coverage.reportPaths=coverage.xml
+          -Dsonar.tests=tests/
           -Dsonar.sources=.
           -Dsonar.host.url=https://sonarcloud.io
 
